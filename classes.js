@@ -30,6 +30,17 @@
 */
 
 //Code Here
+class Employee {
+  constructor (first_name, last_name, email, age) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+        }
+    makeWidget (){
+      console.log(`${first_name}${last_name} + 'Widget'`)
+    }
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -48,6 +59,20 @@
 */
 
 //Code Here
+class Manager extends Employee {
+    constructor(first_name, last_name, email, age, reports) {
+      super(first_name, last_name, email, age)
+      this.reports = [];
+    }
+    hire(newEmployee){
+      reports.push(newEmployee);
+      return reports;
+    }
+    fire(index){
+      reports.remove(reports[i])
+      return reports;
+    }
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -72,7 +97,6 @@
 */
 
 //Code Here
-
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
