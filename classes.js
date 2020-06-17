@@ -38,8 +38,10 @@ class Employee {
     this.age = age;
         }
     makeWidget (){
-      console.log(`${first_name}${last_name} + 'Widget'`)
-    }
+      return (
+        `${this.first_name} ${this.last_name} Widget`
+      )
+  }
 }
 
 
@@ -97,7 +99,7 @@ class Manager extends Employee {
 class ProgressiveManager extends Manager {
   constructor(first_name, last_name, email, age){
     super(first_name, last_name, email, age);
-    this.title = 'Not a Manager';
+    this.title = 'Not a manager';
     this.bonus = 0;
   }
     hire(){
@@ -118,7 +120,8 @@ class ProgressiveManager extends Manager {
       }
     }
     fire(){
-
+      super.fire();
+      this.bonus = this.bonus + 100
     }
 }
 
@@ -163,21 +166,13 @@ class Machine {
   }
 
   reboot(){
+   let machine = this 
     return function(){
-      this.wear_and_tear_count -= 10;
-      this.needs_reboot = false;
+      machine.wear_and_tear_count -= 10;
+      machine.needs_reboot = false;
     }
   }
 }
 
-// const walle = new Machine();
-// console.log(walle)
-
-// walle.makeWidgets(1000);
-
-// console.log(walle);
-
-// const innerFunction = walle.reboot();
-// console.log(innerFunction)
 
 
